@@ -35,3 +35,34 @@ function setPropsOnFunc(functionObject) {
       return num / 2;
     });
 }
+
+const gumBrands = ['orbit', 'trident', 'chiclet', 'strident'];
+const mintBrands = ['altoids', 'certs', 'breath savers', 'tic tac'];
+
+const hockeyTeam = { ch: 'blackhawks' };
+const baseballTeam = { ny: 'yankees' };
+
+// function shallowCopy(arr1, arr2) {
+//   //     return arr1.concat(arr2);
+//   //   return Object.assign(arr1, arr2)
+//   // const result1 = [...arr1, ...arr2];
+//   // const result2 = { ...arr1, ...arr2 };
+//   const result1 = arr1.concat(arr2);
+//   const result2 = Object.assign(arr1, arr2);
+//   // return [...arr1, ...arr2, { ...arr1, ...arr2 }];
+//   return result1, result2;
+// }
+
+function shallowCopy(collection1, collection2) {
+  if (Array.isArray(collection1) && Array.isArray(collection2)) {
+    return [...collection1, ...collection2];
+  } else {
+    return {
+      ...collection1,
+      ...collection2,
+    };
+  }
+}
+
+shallowCopy(gumBrands, mintBrands);
+shallowCopy(hockeyTeam, baseballTeam);
