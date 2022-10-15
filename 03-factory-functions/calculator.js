@@ -4,32 +4,47 @@
 //   return 0;
 // };
 
-// const createCalculator = () => {
-//   class Calculator {
-//     constructor(props) {
-//       this.value = 0;
-//     }
-//     add(number) {
-//       this.value = this.value + number;
-//       return this;
-//     }
-//     subtract(number) {
-//       this.value = this.value - number;
-//       return this;
-//     }
-//     divide(number) {
-//       this.value = this.value / number;
-//       return this;
-//     }
-//     multiply(number) {
-//       this.value = this.value * number;
-//       return this;
-//     }
-//     compute() {
-//       return this.value;
-//     }
-//   }
-// };
+const createCalculator = () => {
+  //   class Calculator {
+  //     constructor(props) {
+  //       this.value = 0;
+  //     }
+  //     add(number) {
+  //       this.value = this.value + number;
+  //       return this;
+  //     }
+  //     subtract(number) {
+  //       this.value = this.value - number;
+  //       return this;
+  //     }
+  //     divide(number) {
+  //       this.value = this.value / number;
+  //       return this;
+  //     }
+  //     multiply(number) {
+  //       this.value = this.value * number;
+  //       return this;
+  //     }
+  //     compute() {
+  //       return this.value;
+  //     }
+  //   }
+  return {
+    total: 0,
+    value() {
+      return this.total;
+    },
+    add(num) {
+      this.total += num;
+    },
+    subtract(num) {
+      this.total -= num;
+    },
+    clear() {
+      this.total = 0;
+    },
+  };
+};
 
 // let calculator = new Calculator();
 // let value = calculator.add(5).subtract(1).divide(2).compute();
